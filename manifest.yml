@@ -1,0 +1,15 @@
+---
+declared-services:
+  yourappname-watson:
+    label: conversation
+    plan: free
+applications:
+- name: yourapp
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - yourappname-watson
+  env:
+    NPM_CONFIG_PRODUCTION: false
